@@ -3,7 +3,9 @@ import { useTypewriter ,Cursor} from 'react-simple-typewriter'
 const WritterEffect = () => {
   const [text] = useTypewriter({
     words: ['pescadores', 'cazadores', 'y otros mentirosos...'],
-    loop: 0
+    loop: 0,
+    typeSpeed:90
+
   })
 
   return (

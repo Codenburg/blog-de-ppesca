@@ -1,29 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import WritterEffect from "../components/react/WritterEffect";
-import casca from "../images/casca.jpeg";
+import Home from "../components/Home.astro";
+import Services from "../components/Services.astro";
+import Gallery from "../components/Gallery.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Dona Irma">
-  <section id="home">
-    <div class="relative">
-      <div class="bg-gradient-to-r from-custom-blue to-custom-green rounded">
-        <img
-          src={casca.src}
-          alt="casca con un surubisazo"
-          class="h-[720px] w-full object-cover absolute opacity-20 rounded"
-        />
-        <div
-          class="relative h-[720px] z-10 flex flex-col justify-center text-center"
-        >
-          <h1
-            class="text-black tracking-wide font-semibold text-3xl lg:text-5xl lg:text-left py-4 lg:py-24"
-          >
-            Aquí se reúnen
-            <WritterEffect client:idle />
-          </h1>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Home />
+  <Services/>
+  <Gallery/>
+  <Footer/>
 </Layout>

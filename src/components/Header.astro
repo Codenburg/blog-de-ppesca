@@ -4,13 +4,13 @@
       class="text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800"
     >
       <div
-        class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
+        class="flex flex-col max-w-screen-xl mx-auto md:items-center md:justify-between md:flex-row md:px-6"
       >
         <div class="flex flex-row items-center justify-between p-4">
           <a
             href="/"
-            class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"
-            >Dona Irma</a
+            class="lg:text-xl md:text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline"
+            >Alojamiento y pesca Doña Irma</a
           >
           <button
             id="navButton"
@@ -32,50 +32,55 @@
                 clip-rule="evenodd"></path>
             </svg>
           </button>
-          <script>
-            const handleButton = document.getElementById("navButton");
-            const closedIcon = document.getElementById("closedIconPath");
-            const openIcon = document.getElementById("openIconPath");
-            const toggleNavButton = document.getElementById("toggleNavButton");
-            let isOpen = false;
-
-            closedIcon.style.display = "block";
-            openIcon.style.display = "none";
-
-            handleButton.addEventListener("click", () => {
-              isOpen = !isOpen;
-
-              if (isOpen) {
-                openIcon.style.display = "block";
-                closedIcon.style.display = "none";
-                toggleNavButton.classList.remove("hidden");
-              } else {
-                openIcon.style.display = "none";
-                closedIcon.style.display = "block";
-                toggleNavButton.classList.add("hidden");
-              }
-            });
-          </script>
         </div>
         <nav
-          id="toggleNavButton"
+          id="NavMenu"
           class="flex flex-col hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row"
         >
           <a
-            class="text-center px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            class="nav-link text-center px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
             href="#services">Servicios</a
           >
 
           <a
-            class="text-center px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-            href="#pictures">Fotos</a
+            class="nav-link text-center px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            href="#gallery">Galeria</a
           >
           <a
-            class="text-center px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            class="nav-link text-center px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
             href="#contact">Contacto</a
           >
         </nav>
       </div>
     </div>
   </div>
+  <script>
+    // Seleccionar elementos del DOM
+    const handleButton = document.getElementById("navButton");
+    const closedIcon = document.getElementById("closedIconPath");
+    const openIcon = document.getElementById("openIconPath");
+    const navMenu = document.getElementById("NavMenu");
+    const navLinks = document.querySelectorAll(".nav-link");
+    let isOpen = false;
+    
+    // Configuración inicial
+    closedIcon.style.display = "block";
+    openIcon.style.display = "none";
+
+    // Función para alternar la visibilidad del menú de navegación
+    function toggleNavigation() {
+      isOpen = !isOpen;
+      openIcon.style.display = isOpen ? "block" : "none";
+      closedIcon.style.display = isOpen ? "none" : "block";
+      navMenu.classList.toggle("hidden", !isOpen);
+    }
+
+    // Agregar un evento de clic a los enlaces de navegación para ocultar el menú
+    navLinks.forEach((link) => {
+      link.addEventListener("click", toggleNavigation);
+    });
+
+    // Agregar un evento de clic al botón de navegación para alternar el menú
+    handleButton.addEventListener("click", toggleNavigation);
+  </script>
 </header>

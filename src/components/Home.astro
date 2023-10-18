@@ -1,0 +1,26 @@
+---
+import WritterEffect from "../components/react/WritterEffect";
+import casca from "../images/casca.jpeg";
+---
+
+<section id="home">
+  <div class="relative">
+    <div class="bg-gradient-to-r from-custom-blue to-custom-green rounded">
+      <img
+        src={casca.src}
+        alt="casca con un surubisazo"
+        class="w-screen h-screen object-cover absolute opacity-20 rounded"
+      />
+      <div
+        class="h-screen relative z-10 flex flex-col justify-center text-center"
+      >
+        <h1
+          class="drop-shadow uppercase text-black tracking-wide font-bold text-3xl lg:text-5xl lg:text-center py-4 lg:py-24"
+        >
+          Aquí se reúnen
+          <WritterEffect client:visible />
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
